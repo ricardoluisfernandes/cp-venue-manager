@@ -2,7 +2,7 @@
   "name": "cp-venue-manager",
   "version": "0.0.1-SNAPSHOT",
   "private": true,
-  "description": "Description for cpVenueManager",
+  "description": "Contraponto Venue Manager",
   "license": "UNLICENSED",
   "scripts": {
     "app:start": "./mvnw",
