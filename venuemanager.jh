@@ -1,4 +1,3 @@
-
 entity Contractor {
 	name String required,
     email String,
@@ -52,7 +51,7 @@ entity SetList {
 }
 
 relationship OneToOne {
-    Venue to SetList{venue}
+    SetList{venue} to Venue
 }
 
 entity SetListLine {
@@ -63,7 +62,7 @@ relationship OneToMany {
     SetList to SetListLine{setList}
 }
 
-relationship ManyToMany {
+relationship ManyToOne {
     SetListLine{song} to Song
 }
 
