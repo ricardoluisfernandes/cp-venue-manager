@@ -1,0 +1,54 @@
+{
+  "applications": "*",
+  "changelogDate": "20220407214651",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "expense",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "ExpenseType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "TRAVEL,FOOD,CLOTHING,OTHER"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "ExpenseStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "OPEN,IN_PAYMENT,PAYED"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Expense",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "expense",
+      "ownerSide": true,
+      "relationshipName": "payment",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "member",
+      "otherEntityRelationshipName": "expense",
+      "relationshipName": "member",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "venue",
+      "otherEntityRelationshipName": "expense",
+      "relationshipName": "venue",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

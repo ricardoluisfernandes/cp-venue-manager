@@ -1,0 +1,12 @@
+{
+  "cpVenueManagerApp": {
+    "Type": {
+      "null": "",
+      "CONCERT": "CONCERT",
+      "WEDDING": "WEDDING",
+      "SHOWCASE": "SHOWCASE",
+      "REHEARSAL": "REHEARSAL",
+      "OTHER": "OTHER"
+    }
+  }
+}

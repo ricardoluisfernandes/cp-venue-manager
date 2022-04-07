@@ -1,0 +1,67 @@
+{
+  "applications": "*",
+  "changelogDate": "20220407214649",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "member",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "voiceType",
+      "fieldType": "VoiceType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "SOPRANO (1),ALTO (2),TENOR (3),BASS (4),BEATBOX (5)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Member",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "memberAvailability",
+      "otherEntityRelationshipName": "member",
+      "relationshipName": "memberAvailability",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "expense",
+      "otherEntityRelationshipName": "member",
+      "relationshipName": "expense",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "member",
+      "relationshipName": "payment",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "venue",
+      "otherEntityRelationshipName": "member",
+      "ownerSide": true,
+      "relationshipName": "venue",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

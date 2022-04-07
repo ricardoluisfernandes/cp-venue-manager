@@ -1,0 +1,27 @@
+{
+  "cpVenueManagerApp": {
+    "contractor": {
+      "home": {
+        "title": "Contractors",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Contractor",
+        "createOrEditLabel": "Criar ou editar Contractor",
+        "notFound": "Nenhum Contractors encontrado"
+      },
+      "created": "Um novo Contractor foi criado com o identificador {{ param }}",
+      "updated": "Contractor com identificador {{ param }} foi actualizado",
+      "deleted": "Contractor com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Contractor {{ id }}?"
+      },
+      "detail": {
+        "title": "Contractor"
+      },
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "comments": "Comments"
+    }
+  }
+}

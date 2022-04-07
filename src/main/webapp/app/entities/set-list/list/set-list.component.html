@@ -1,0 +1,110 @@
+<div>
+  <h2 id="page-heading" data-cy="SetListHeading">
+    <span jhiTranslate="cpVenueManagerApp.setList.home.title">Set Lists</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="cpVenueManagerApp.setList.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-set-list"
+        [routerLink]="['/set-list/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="cpVenueManagerApp.setList.home.createLabel"> Create a new Set List </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="setLists?.length === 0">
+    <span jhiTranslate="cpVenueManagerApp.setList.home.notFound">No setLists found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="setLists && setLists.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="description">
+            <span jhiTranslate="cpVenueManagerApp.setList.description">Description</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="totalDuration">
+            <span jhiTranslate="cpVenueManagerApp.setList.totalDuration">Total Duration</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="venue.id">
+            <span jhiTranslate="cpVenueManagerApp.setList.venue">Venue</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let setList of setLists; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/set-list', setList.id, 'view']">{{ setList.id }}</a>
+          </td>
+          <td>{{ setList.description }}</td>
+          <td title="{{ setList.totalDuration }}">{{ setList.totalDuration | duration }}</td>
+          <td>
+            <div *ngIf="setList.venue">
+              <a [routerLink]="['/venue', setList.venue?.id, 'view']">{{ setList.venue?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/set-list', setList.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/set-list', setList.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(setList)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="setLists && setLists.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

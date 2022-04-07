@@ -1,0 +1,10 @@
+{
+  "cpVenueManagerApp": {
+    "Availability": {
+      "null": "",
+      "AVAILABLE": "AVAILABLE",
+      "UNAVAILABLE": "UNAVAILABLE",
+      "UNKNOWN": "UNKNOWN"
+    }
+  }
+}

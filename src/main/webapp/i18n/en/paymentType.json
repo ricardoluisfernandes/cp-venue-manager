@@ -1,0 +1,10 @@
+{
+  "cpVenueManagerApp": {
+    "PaymentType": {
+      "null": "",
+      "PERFORMANCE": "PERFORMANCE",
+      "TRAVEL_EXPENSES": "TRAVEL_EXPENSES",
+      "OTHER_EXPENSES": "OTHER_EXPENSES"
+    }
+  }
+}

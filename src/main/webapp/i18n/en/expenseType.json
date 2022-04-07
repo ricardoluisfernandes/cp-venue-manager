@@ -1,0 +1,11 @@
+{
+  "cpVenueManagerApp": {
+    "ExpenseType": {
+      "null": "",
+      "TRAVEL": "TRAVEL",
+      "FOOD": "FOOD",
+      "CLOTHING": "CLOTHING",
+      "OTHER": "OTHER"
+    }
+  }
+}

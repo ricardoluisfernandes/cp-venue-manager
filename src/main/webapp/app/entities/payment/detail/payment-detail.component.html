@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="payment">
+      <h2 data-cy="paymentDetailsHeading"><span jhiTranslate="cpVenueManagerApp.payment.detail.title">Payment</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ payment.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.payment.type">Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cpVenueManagerApp.PaymentType.' + payment.type }}">{{ payment.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.payment.value">Value</span></dt>
+        <dd>
+          <span>{{ payment.value }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.payment.description">Description</span></dt>
+        <dd>
+          <span>{{ payment.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.payment.status">Status</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cpVenueManagerApp.PaymentStatus.' + payment.status }}">{{ payment.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.payment.member">Member</span></dt>
+        <dd>
+          <div *ngIf="payment.member">
+            <a [routerLink]="['/member', payment.member?.id, 'view']">{{ payment.member?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.payment.venue">Venue</span></dt>
+        <dd>
+          <div *ngIf="payment.venue">
+            <a [routerLink]="['/venue', payment.venue?.id, 'view']">{{ payment.venue?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/payment', payment.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

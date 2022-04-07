@@ -1,0 +1,30 @@
+{
+  "cpVenueManagerApp": {
+    "payment": {
+      "home": {
+        "title": "Payments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Payment",
+        "createOrEditLabel": "Criar ou editar Payment",
+        "notFound": "Nenhum Payments encontrado"
+      },
+      "created": "Um novo Payment foi criado com o identificador {{ param }}",
+      "updated": "Payment com identificador {{ param }} foi actualizado",
+      "deleted": "Payment com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Payment {{ id }}?"
+      },
+      "detail": {
+        "title": "Payment"
+      },
+      "id": "ID",
+      "type": "Type",
+      "value": "Value",
+      "description": "Description",
+      "status": "Status",
+      "expense": "Expense",
+      "member": "Member",
+      "venue": "Venue"
+    }
+  }
+}

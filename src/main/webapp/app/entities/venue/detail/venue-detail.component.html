@@ -1,0 +1,90 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="venue">
+      <h2 data-cy="venueDetailsHeading"><span jhiTranslate="cpVenueManagerApp.venue.detail.title">Venue</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ venue.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.instant">Instant</span></dt>
+        <dd>
+          <span>{{ venue.instant | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.location">Location</span></dt>
+        <dd>
+          <span>{{ venue.location }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.distance">Distance</span></dt>
+        <dd>
+          <span>{{ venue.distance }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.type">Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cpVenueManagerApp.Type.' + venue.type }}">{{ venue.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.status">Status</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cpVenueManagerApp.VenueStatus.' + venue.status }}">{{ venue.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.totalDuration">Total Duration</span></dt>
+        <dd>
+          <span>{{ venue.totalDuration | duration }} ({{ venue.totalDuration }})</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.value">Value</span></dt>
+        <dd>
+          <span>{{ venue.value }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.considerTravelExpenses">Consider Travel Expenses</span></dt>
+        <dd>
+          <span>{{ venue.considerTravelExpenses }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.travelExpensesValue">Travel Expenses Value</span></dt>
+        <dd>
+          <span>{{ venue.travelExpensesValue }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.doValueRetention">Do Value Retention</span></dt>
+        <dd>
+          <span>{{ venue.doValueRetention }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.retentionPercentage">Retention Percentage</span></dt>
+        <dd>
+          <span>{{ venue.retentionPercentage }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.retentionValue">Retention Value</span></dt>
+        <dd>
+          <span>{{ venue.retentionValue }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.memberValue">Member Value</span></dt>
+        <dd>
+          <span>{{ venue.memberValue }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.comments">Comments</span></dt>
+        <dd>
+          <span>{{ venue.comments }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.venue.contractor">Contractor</span></dt>
+        <dd>
+          <div *ngIf="venue.contractor">
+            <a [routerLink]="['/contractor', venue.contractor?.id, 'view']">{{ venue.contractor?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/venue', venue.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

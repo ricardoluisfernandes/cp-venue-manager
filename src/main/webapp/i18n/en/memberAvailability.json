@@ -1,0 +1,26 @@
+{
+  "cpVenueManagerApp": {
+    "memberAvailability": {
+      "home": {
+        "title": "Member Availabilities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Member Availability",
+        "createOrEditLabel": "Create or edit a Member Availability",
+        "notFound": "No Member Availabilities found"
+      },
+      "created": "A new Member Availability is created with identifier {{ param }}",
+      "updated": "A Member Availability is updated with identifier {{ param }}",
+      "deleted": "A Member Availability is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Member Availability {{ id }}?"
+      },
+      "detail": {
+        "title": "Member Availability"
+      },
+      "id": "ID",
+      "availability": "Availability",
+      "member": "Member",
+      "venue": "Venue"
+    }
+  }
+}

@@ -1,0 +1,149 @@
+<div>
+  <h2 id="page-heading" data-cy="VenueHeading">
+    <span jhiTranslate="cpVenueManagerApp.venue.home.title">Venues</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="cpVenueManagerApp.venue.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-venue"
+        [routerLink]="['/venue/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="cpVenueManagerApp.venue.home.createLabel"> Create a new Venue </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="venues?.length === 0">
+    <span jhiTranslate="cpVenueManagerApp.venue.home.notFound">No venues found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="venues && venues.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="instant">
+            <span jhiTranslate="cpVenueManagerApp.venue.instant">Instant</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="location">
+            <span jhiTranslate="cpVenueManagerApp.venue.location">Location</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="distance">
+            <span jhiTranslate="cpVenueManagerApp.venue.distance">Distance</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="type">
+            <span jhiTranslate="cpVenueManagerApp.venue.type">Type</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <span jhiTranslate="cpVenueManagerApp.venue.status">Status</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="totalDuration">
+            <span jhiTranslate="cpVenueManagerApp.venue.totalDuration">Total Duration</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="value">
+            <span jhiTranslate="cpVenueManagerApp.venue.value">Value</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="considerTravelExpenses">
+            <span jhiTranslate="cpVenueManagerApp.venue.considerTravelExpenses">Consider Travel Expenses</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="travelExpensesValue">
+            <span jhiTranslate="cpVenueManagerApp.venue.travelExpensesValue">Travel Expenses Value</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="doValueRetention">
+            <span jhiTranslate="cpVenueManagerApp.venue.doValueRetention">Do Value Retention</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="retentionPercentage">
+            <span jhiTranslate="cpVenueManagerApp.venue.retentionPercentage">Retention Percentage</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="retentionValue">
+            <span jhiTranslate="cpVenueManagerApp.venue.retentionValue">Retention Value</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="memberValue">
+            <span jhiTranslate="cpVenueManagerApp.venue.memberValue">Member Value</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="comments">
+            <span jhiTranslate="cpVenueManagerApp.venue.comments">Comments</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="contractor.id">
+            <span jhiTranslate="cpVenueManagerApp.venue.contractor">Contractor</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let venue of venues; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/venue', venue.id, 'view']">{{ venue.id }}</a>
+          </td>
+          <td>{{ venue.instant | formatMediumDatetime }}</td>
+          <td>{{ venue.location }}</td>
+          <td>{{ venue.distance }}</td>
+          <td jhiTranslate="{{ 'cpVenueManagerApp.Type.' + venue.type }}">{{ venue.type }}</td>
+          <td jhiTranslate="{{ 'cpVenueManagerApp.VenueStatus.' + venue.status }}">{{ venue.status }}</td>
+          <td title="{{ venue.totalDuration }}">{{ venue.totalDuration | duration }}</td>
+          <td>{{ venue.value }}</td>
+          <td>{{ venue.considerTravelExpenses }}</td>
+          <td>{{ venue.travelExpensesValue }}</td>
+          <td>{{ venue.doValueRetention }}</td>
+          <td>{{ venue.retentionPercentage }}</td>
+          <td>{{ venue.retentionValue }}</td>
+          <td>{{ venue.memberValue }}</td>
+          <td>{{ venue.comments }}</td>
+          <td>
+            <div *ngIf="venue.contractor">
+              <a [routerLink]="['/contractor', venue.contractor?.id, 'view']">{{ venue.contractor?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/venue', venue.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/venue', venue.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(venue)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="venues && venues.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>
