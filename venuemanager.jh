@@ -1,3 +1,10 @@
+entity Contractor {
+	name String required,
+    email String,
+    phoneNumber String,
+    comments String
+}
+
 entity Venue {
     instant Instant required,
     location String required,
@@ -34,13 +41,6 @@ enum VenueStatus {
     CLOSED // Fechado
 }
 
-entity Contractor {
-	name String required,
-    email String,
-    phoneNumber String,
-    comments String
-}
-
 relationship ManyToOne {
     Venue{contractor} to Contractor
 }
@@ -62,7 +62,7 @@ relationship OneToMany {
     SetList to SetListLine{setList}
 }
 
-relationship ManyToMany {
+relationship ManyToOne {
     SetListLine{song} to Song
 }
 
