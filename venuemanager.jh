@@ -1,0 +1,181 @@
+
+entity Venue {
+    instant Instant required,
+    location String required,
+    contractor Contractor,
+    distance BigDecimal required,
+    type Type required,
+    status VenueStatus required,
+    totalDuration Duration,
+    value BigDecimal min(0),
+    considerTravelExpenses Boolean,
+    travelExpensesValue BigDecimal,
+    doValueRetention Boolean,
+    retentionPercentage BigDecimal,
+    retentionValue BigDecimal, // calculado: valor * 0.2 ?!?
+    memberValue BigDecimal, // calculado: (valor - retenção) / número de elementos
+	comments String
+}
+
+enum Type {
+	CONCERT, // Concerto
+    WEDDING, // Casamento
+    SHOWCASE, // Showcase
+    REHEARSAL, // Ensaio
+    OTHER // Outro
+}
+
+enum VenueStatus {
+	DRAFT, // Rascunho
+    PENDING_AVAILABILITY, // A avaliar disponibilidades
+    PENDING_BOOKING, // Espera confirmação
+    CANCELED, // Cancelado
+    SCHEDULED, // Agendado
+    PENDING_PAYMENT, // Aguarda pagamento
+    PAYED, // Pago
+    CLOSED // Fechado
+}
+
+entity Contractor {
+	name String required,
+    email String,
+    phoneNumber String,
+    comments String
+}
+
+relationship ManyToOne {
+    Venue{contractor} to Contractor
+}
+
+entity SetList {
+    description String required,
+	venue Venue required,
+    totalDuration Duration
+}
+
+entity SetListLine {
+	setList SetList required,
+	song Song required
+    order Integer required
+}
+
+entity Song {
+	name String required,
+    duration Duration required,
+    score String
+}
+
+relationship OneToOne {
+    Venue to SetList{venue}
+}
+
+relationship OneToMany {
+    SetList to SetListLine{setList}
+}
+
+relationship ManyToMany {
+    SetListLine{song} to Song
+}
+
+entity Member {
+	firstName String required,
+	lastName String required,
+	email String required,
+	phoneNumber String,
+    voiceType VoiceType required
+}
+
+enum VoiceType {
+	SOPRANO("1"), ALTO("2"), TENOR("3"), BASS("4"), BEATBOX("5")
+}
+
+relationship ManyToMany {
+	Member to Venue
+}
+
+entity MemberAvailability {
+	member Member required,
+    venue Venue required,
+    availability Availability required
+}
+
+enum Availability {
+	AVAILABLE, // Disponível
+    UNAVAILABLE, // Indisponível
+    UNKNOWN // Desconhecido
+}
+
+relationship OneToMany {
+	Member to MemberAvailability
+}
+
+relationship OneToMany {
+	Venue to MemberAvailability
+}
+
+entity Expense {
+	member Member required,
+    venue Venue,
+    type ExpenseType required,
+    value BigDecimal required min(0),
+    status ExpenseStatus required,
+    payment Payment 
+}
+
+enum ExpenseType {
+	TRAVEL, // Deslocações
+    FOOD, // Alimentação
+    CLOTHING, // Roupas
+    OTHER // Outras
+}
+
+enum ExpenseStatus {
+	OPEN, // Em aberto
+    IN_PAYMENT, // Em pagamento
+    PAYED // Paga
+}
+
+entity Payment {
+	member Member required,
+    venue Venue,
+    expense Expense,
+    type PaymentType required,
+    value BigDecimal required,
+    description String,
+    status PaymentStatus required
+}
+
+enum PaymentType {
+	PERFORMANCE, // Actuação
+    TRAVEL_EXPENSES, // Despesas de deslocação
+    OTHER_EXPENSES // Outras despesas
+}
+
+enum PaymentStatus {
+	PENDING, // Pendente
+    EXECUTED // Executado
+}
+
+relationship OneToMany {
+	Member to Payment{member}
+}
+
+relationship OneToMany {
+    Venue to Payment{venue}
+}
+
+relationship OneToOne {
+	Expense{payment} to Payment{expense}
+}
+
+// Set pagination options
+paginate Venue, Member, Contractor, SetList, SetListLine, Song, Payment with pagination
+
+// Use Data Transfer Objects (DTO)
+ dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceClass
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
