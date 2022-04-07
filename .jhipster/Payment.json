@@ -1,0 +1,57 @@
+{
+  "applications": "*",
+  "changelogDate": "20220407214652",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "payment",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "PaymentType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PERFORMANCE,TRAVEL_EXPENSES,OTHER_EXPENSES"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "PaymentStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDING,EXECUTED"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Payment",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "expense",
+      "otherEntityRelationshipName": "payment",
+      "ownerSide": false,
+      "relationshipName": "expense",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "member",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "member",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "venue",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "venue",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,42 @@
+{
+  "cpVenueManagerApp": {
+    "venue": {
+      "home": {
+        "title": "Venues",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Venue",
+        "createOrEditLabel": "Criar ou editar Venue",
+        "notFound": "Nenhum Venues encontrado"
+      },
+      "created": "Um novo Venue foi criado com o identificador {{ param }}",
+      "updated": "Venue com identificador {{ param }} foi actualizado",
+      "deleted": "Venue com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Venue {{ id }}?"
+      },
+      "detail": {
+        "title": "Venue"
+      },
+      "id": "ID",
+      "instant": "Instant",
+      "location": "Location",
+      "distance": "Distance",
+      "type": "Type",
+      "status": "Status",
+      "totalDuration": "Total Duration",
+      "value": "Value",
+      "considerTravelExpenses": "Consider Travel Expenses",
+      "travelExpensesValue": "Travel Expenses Value",
+      "doValueRetention": "Do Value Retention",
+      "retentionPercentage": "Retention Percentage",
+      "retentionValue": "Retention Value",
+      "memberValue": "Member Value",
+      "comments": "Comments",
+      "memberAvailability": "Member Availability",
+      "expense": "Expense",
+      "payment": "Payment",
+      "contractor": "Contractor",
+      "member": "Member"
+    }
+  }
+}

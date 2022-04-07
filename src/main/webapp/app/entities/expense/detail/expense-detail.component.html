@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="expense">
+      <h2 data-cy="expenseDetailsHeading"><span jhiTranslate="cpVenueManagerApp.expense.detail.title">Expense</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ expense.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.expense.type">Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cpVenueManagerApp.ExpenseType.' + expense.type }}">{{ expense.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.expense.value">Value</span></dt>
+        <dd>
+          <span>{{ expense.value }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.expense.status">Status</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cpVenueManagerApp.ExpenseStatus.' + expense.status }}">{{ expense.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.expense.payment">Payment</span></dt>
+        <dd>
+          <div *ngIf="expense.payment">
+            <a [routerLink]="['/payment', expense.payment?.id, 'view']">{{ expense.payment?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.expense.member">Member</span></dt>
+        <dd>
+          <div *ngIf="expense.member">
+            <a [routerLink]="['/member', expense.member?.id, 'view']">{{ expense.member?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.expense.venue">Venue</span></dt>
+        <dd>
+          <div *ngIf="expense.venue">
+            <a [routerLink]="['/venue', expense.venue?.id, 'view']">{{ expense.venue?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/expense', expense.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

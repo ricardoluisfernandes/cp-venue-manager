@@ -1,0 +1,34 @@
+{
+  "applications": "*",
+  "changelogDate": "20220407214647",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "set_list_line",
+  "fields": [
+    {
+      "fieldName": "order",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SetListLine",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "song",
+      "otherEntityRelationshipName": "setListLine",
+      "relationshipName": "song",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "setList",
+      "otherEntityRelationshipName": "setListLine",
+      "relationshipName": "setList",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

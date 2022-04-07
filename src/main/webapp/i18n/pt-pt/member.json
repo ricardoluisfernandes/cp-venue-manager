@@ -1,0 +1,32 @@
+{
+  "cpVenueManagerApp": {
+    "member": {
+      "home": {
+        "title": "Members",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Member",
+        "createOrEditLabel": "Criar ou editar Member",
+        "notFound": "Nenhum Members encontrado"
+      },
+      "created": "Um novo Member foi criado com o identificador {{ param }}",
+      "updated": "Member com identificador {{ param }} foi actualizado",
+      "deleted": "Member com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Member {{ id }}?"
+      },
+      "detail": {
+        "title": "Member"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "voiceType": "Voice Type",
+      "memberAvailability": "Member Availability",
+      "expense": "Expense",
+      "payment": "Payment",
+      "venue": "Venue"
+    }
+  }
+}

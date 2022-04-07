@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Member.
+    -->
+    <changeSet id="20220407214649-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="member_id"
+                                 baseTableName="rel_member__venue"
+                                 constraintName="fk_rel_member__venue__member_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="member"/>
+
+        <addForeignKeyConstraint baseColumnNames="venue_id"
+                                 baseTableName="rel_member__venue"
+                                 constraintName="fk_rel_member__venue__venue_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="venue"/>
+    </changeSet>
+</databaseChangeLog>

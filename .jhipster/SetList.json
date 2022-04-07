@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20220407214646",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "set_list",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "totalDuration",
+      "fieldType": "Duration"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SetList",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "venue",
+      "otherEntityRelationshipName": "setList",
+      "ownerSide": true,
+      "relationshipName": "venue",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "setListLine",
+      "otherEntityRelationshipName": "setList",
+      "relationshipName": "setListLine",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

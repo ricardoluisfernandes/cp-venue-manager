@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="contractor">
+      <h2 data-cy="contractorDetailsHeading"><span jhiTranslate="cpVenueManagerApp.contractor.detail.title">Contractor</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ contractor.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.contractor.name">Name</span></dt>
+        <dd>
+          <span>{{ contractor.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.contractor.email">Email</span></dt>
+        <dd>
+          <span>{{ contractor.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.contractor.phoneNumber">Phone Number</span></dt>
+        <dd>
+          <span>{{ contractor.phoneNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="cpVenueManagerApp.contractor.comments">Comments</span></dt>
+        <dd>
+          <span>{{ contractor.comments }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/contractor', contractor.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

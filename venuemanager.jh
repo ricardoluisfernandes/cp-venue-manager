@@ -1,10 +1,3 @@
-entity Contractor {
-	name String required,
-    email String,
-    phoneNumber String,
-    comments String
-}
-
 entity Venue {
     instant Instant required,
     location String required,
@@ -39,6 +32,13 @@ enum VenueStatus {
     PENDING_PAYMENT, // Aguarda pagamento
     PAYED, // Pago
     CLOSED // Fechado
+}
+
+entity Contractor {
+	name String required,
+    email String,
+    phoneNumber String,
+    comments String
 }
 
 relationship ManyToOne {

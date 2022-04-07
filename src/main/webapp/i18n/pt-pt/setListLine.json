@@ -1,0 +1,26 @@
+{
+  "cpVenueManagerApp": {
+    "setListLine": {
+      "home": {
+        "title": "Set List Lines",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Set List Line",
+        "createOrEditLabel": "Criar ou editar Set List Line",
+        "notFound": "Nenhum Set List Lines encontrado"
+      },
+      "created": "Um novo Set List Line foi criado com o identificador {{ param }}",
+      "updated": "Set List Line com identificador {{ param }} foi actualizado",
+      "deleted": "Set List Line com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Set List Line {{ id }}?"
+      },
+      "detail": {
+        "title": "Set List Line"
+      },
+      "id": "ID",
+      "order": "Order",
+      "song": "Song",
+      "setList": "Set List"
+    }
+  }
+}

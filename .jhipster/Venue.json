@@ -1,0 +1,113 @@
+{
+  "applications": "*",
+  "changelogDate": "20220407214644",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "venue",
+  "fields": [
+    {
+      "fieldName": "instant",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "distance",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "Type",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "CONCERT,WEDDING,SHOWCASE,REHEARSAL,OTHER"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "VenueStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "DRAFT,PENDING_AVAILABILITY,PENDING_BOOKING,CANCELED,SCHEDULED,PENDING_PAYMENT,PAYED,CLOSED"
+    },
+    {
+      "fieldName": "totalDuration",
+      "fieldType": "Duration"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "considerTravelExpenses",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "travelExpensesValue",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "doValueRetention",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "retentionPercentage",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "retentionValue",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "memberValue",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "comments",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Venue",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "memberAvailability",
+      "otherEntityRelationshipName": "venue",
+      "relationshipName": "memberAvailability",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "expense",
+      "otherEntityRelationshipName": "venue",
+      "relationshipName": "expense",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "venue",
+      "relationshipName": "payment",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "contractor",
+      "otherEntityRelationshipName": "venue",
+      "relationshipName": "contractor",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "member",
+      "otherEntityRelationshipName": "venue",
+      "ownerSide": false,
+      "relationshipName": "member",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}
