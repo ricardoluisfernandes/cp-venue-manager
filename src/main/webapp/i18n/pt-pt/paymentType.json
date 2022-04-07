@@ -2,9 +2,9 @@
   "cpVenueManagerApp": {
     "PaymentType": {
       "null": "",
-      "PERFORMANCE": "PERFORMANCE",
-      "TRAVEL_EXPENSES": "TRAVEL_EXPENSES",
-      "OTHER_EXPENSES": "OTHER_EXPENSES"
+      "PERFORMANCE": "Actuação",
+      "TRAVEL_EXPENSES": "Despesas de deslocação",
+      "OTHER_EXPENSES": "Outras despesas"
     }
   }
 }

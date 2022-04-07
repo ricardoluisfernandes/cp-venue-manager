@@ -2,9 +2,9 @@
   "cpVenueManagerApp": {
     "ExpenseStatus": {
       "null": "",
-      "OPEN": "OPEN",
-      "IN_PAYMENT": "IN_PAYMENT",
-      "PAYED": "PAYED"
+      "OPEN": "Em aberto",
+      "IN_PAYMENT": "Em pagamento",
+      "PAYED": "Pago"
     }
   }
 }

@@ -2,9 +2,9 @@
   "cpVenueManagerApp": {
     "Availability": {
       "null": "",
-      "AVAILABLE": "AVAILABLE",
-      "UNAVAILABLE": "UNAVAILABLE",
-      "UNKNOWN": "UNKNOWN"
+      "AVAILABLE": "Disponível",
+      "UNAVAILABLE": "Indisponível",
+      "UNKNOWN": "Desconhecido"
     }
   }
 }

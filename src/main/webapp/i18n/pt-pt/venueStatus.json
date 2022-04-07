@@ -2,14 +2,14 @@
   "cpVenueManagerApp": {
     "VenueStatus": {
       "null": "",
-      "DRAFT": "DRAFT",
-      "PENDING_AVAILABILITY": "PENDING_AVAILABILITY",
-      "PENDING_BOOKING": "PENDING_BOOKING",
-      "CANCELED": "CANCELED",
-      "SCHEDULED": "SCHEDULED",
-      "PENDING_PAYMENT": "PENDING_PAYMENT",
-      "PAYED": "PAYED",
-      "CLOSED": "CLOSED"
+      "DRAFT": "Rascunho",
+      "PENDING_AVAILABILITY": "A avaliar disponibilidades",
+      "PENDING_BOOKING": "Espera confirmação",
+      "CANCELED": "Cancelado",
+      "SCHEDULED": "Agendado",
+      "PENDING_PAYMENT": "Aguarda pagamento",
+      "PAYED": "Pago",
+      "CLOSED": "Fechado"
     }
   }
 }

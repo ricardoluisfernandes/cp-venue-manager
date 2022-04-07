@@ -2,29 +2,29 @@
   "cpVenueManagerApp": {
     "payment": {
       "home": {
-        "title": "Payments",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Criar novo(a) Payment",
-        "createOrEditLabel": "Criar ou editar Payment",
-        "notFound": "Nenhum Payments encontrado"
+        "title": "Pagamentos",
+        "refreshListLabel": "Actualizar",
+        "createLabel": "Criar novo Pagamento",
+        "createOrEditLabel": "Criar ou editar Pagamento",
+        "notFound": "Nenhum Pagamento encontrado"
       },
-      "created": "Um novo Payment foi criado com o identificador {{ param }}",
-      "updated": "Payment com identificador {{ param }} foi actualizado",
-      "deleted": "Payment com identificador {{ param }} foi eliminado",
+      "created": "Um novo Pagamento foi criado com o identificador {{ param }}",
+      "updated": "Pagamento com identificador {{ param }} foi actualizado",
+      "deleted": "Pagamento com identificador {{ param }} foi eliminado",
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Payment {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar o Pagamento {{ id }}?"
       },
       "detail": {
-        "title": "Payment"
+        "title": "Pagamento"
       },
       "id": "ID",
-      "type": "Type",
-      "value": "Value",
-      "description": "Description",
-      "status": "Status",
-      "expense": "Expense",
-      "member": "Member",
-      "venue": "Venue"
+      "type": "Tipo",
+      "value": "Valor",
+      "description": "Descrição",
+      "status": "Estado",
+      "expense": "Despesa",
+      "member": "Elemento",
+      "venue": "Evento"
     }
   }
 }

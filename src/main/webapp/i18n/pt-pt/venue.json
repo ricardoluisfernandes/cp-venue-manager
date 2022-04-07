@@ -2,41 +2,41 @@
   "cpVenueManagerApp": {
     "venue": {
       "home": {
-        "title": "Venues",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Criar novo(a) Venue",
-        "createOrEditLabel": "Criar ou editar Venue",
-        "notFound": "Nenhum Venues encontrado"
+        "title": "Eventos",
+        "refreshListLabel": "Actualizar",
+        "createLabel": "Criar novo Evento",
+        "createOrEditLabel": "Criar ou editar Evento",
+        "notFound": "Nenhum Evento encontrado"
       },
-      "created": "Um novo Venue foi criado com o identificador {{ param }}",
-      "updated": "Venue com identificador {{ param }} foi actualizado",
-      "deleted": "Venue com identificador {{ param }} foi eliminado",
+      "created": "Um novo Evento foi criado com o identificador {{ param }}",
+      "updated": "Evento com identificador {{ param }} foi actualizado",
+      "deleted": "Evento com identificador {{ param }} foi eliminado",
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Venue {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar o Evento {{ id }}?"
       },
       "detail": {
-        "title": "Venue"
+        "title": "Evento"
       },
       "id": "ID",
-      "instant": "Instant",
-      "location": "Location",
-      "distance": "Distance",
-      "type": "Type",
-      "status": "Status",
-      "totalDuration": "Total Duration",
-      "value": "Value",
-      "considerTravelExpenses": "Consider Travel Expenses",
-      "travelExpensesValue": "Travel Expenses Value",
-      "doValueRetention": "Do Value Retention",
-      "retentionPercentage": "Retention Percentage",
-      "retentionValue": "Retention Value",
-      "memberValue": "Member Value",
-      "comments": "Comments",
-      "memberAvailability": "Member Availability",
-      "expense": "Expense",
-      "payment": "Payment",
-      "contractor": "Contractor",
-      "member": "Member"
+      "instant": "Data",
+      "location": "Local",
+      "distance": "Distância",
+      "type": "Tipo",
+      "status": "Estado",
+      "totalDuration": "Duração Total",
+      "value": "Valor",
+      "considerTravelExpenses": "Considerar despesas de deslocação",
+      "travelExpensesValue": "Valor despesas de deslocação",
+      "doValueRetention": "Fazer retenção",
+      "retentionPercentage": "Percentagem de retenção",
+      "retentionValue": "Valor de retenção",
+      "memberValue": "Valor por membro",
+      "comments": "Comentários",
+      "memberAvailability": "Disponibilidade",
+      "expense": "Despesa",
+      "payment": "Pagamento",
+      "contractor": "Contratante",
+      "member": "Elemento"
     }
   }
 }

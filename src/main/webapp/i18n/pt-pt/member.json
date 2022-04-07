@@ -2,31 +2,31 @@
   "cpVenueManagerApp": {
     "member": {
       "home": {
-        "title": "Members",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Criar novo(a) Member",
-        "createOrEditLabel": "Criar ou editar Member",
-        "notFound": "Nenhum Members encontrado"
+        "title": "Elementos",
+        "refreshListLabel": "Actualizar",
+        "createLabel": "Criar novo Elemento",
+        "createOrEditLabel": "Criar ou editar Elemento",
+        "notFound": "Nenhum Elemento encontrado"
       },
-      "created": "Um novo Member foi criado com o identificador {{ param }}",
-      "updated": "Member com identificador {{ param }} foi actualizado",
-      "deleted": "Member com identificador {{ param }} foi eliminado",
+      "created": "Um novo Elemento foi criado com o identificador {{ param }}",
+      "updated": "Elemento com identificador {{ param }} foi actualizado",
+      "deleted": "Elemento com identificador {{ param }} foi eliminado",
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Member {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar o(a) Elemento {{ id }}?"
       },
       "detail": {
-        "title": "Member"
+        "title": "Elemento"
       },
       "id": "ID",
-      "firstName": "First Name",
-      "lastName": "Last Name",
+      "firstName": "Nome",
+      "lastName": "Apelido",
       "email": "Email",
-      "phoneNumber": "Phone Number",
-      "voiceType": "Voice Type",
-      "memberAvailability": "Member Availability",
-      "expense": "Expense",
-      "payment": "Payment",
-      "venue": "Venue"
+      "phoneNumber": "Telefone",
+      "voiceType": "Voz",
+      "memberAvailability": "Disponibilidade",
+      "expense": "Despesa",
+      "payment": "Pagamento",
+      "venue": "Evento"
     }
   }
 }

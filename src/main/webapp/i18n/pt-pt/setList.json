@@ -2,26 +2,26 @@
   "cpVenueManagerApp": {
     "setList": {
       "home": {
-        "title": "Set Lists",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Criar novo(a) Set List",
-        "createOrEditLabel": "Criar ou editar Set List",
-        "notFound": "Nenhum Set Lists encontrado"
+        "title": "Reportórios",
+        "refreshListLabel": "Actualizar",
+        "createLabel": "Criar novo Reportório",
+        "createOrEditLabel": "Criar ou editar Reportório",
+        "notFound": "Nenhum Reportório encontrado"
       },
-      "created": "Um novo Set List foi criado com o identificador {{ param }}",
-      "updated": "Set List com identificador {{ param }} foi actualizado",
-      "deleted": "Set List com identificador {{ param }} foi eliminado",
+      "created": "Um novo Reportório foi criado com o identificador {{ param }}",
+      "updated": "Reportório com identificador {{ param }} foi actualizado",
+      "deleted": "Reportório com identificador {{ param }} foi eliminado",
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Set List {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar o Reportório {{ id }}?"
       },
       "detail": {
-        "title": "Set List"
+        "title": "Reportório"
       },
       "id": "ID",
-      "description": "Description",
-      "totalDuration": "Total Duration",
-      "venue": "Venue",
-      "setListLine": "Set List Line"
+      "description": "Descrição",
+      "totalDuration": "Duração Total",
+      "venue": "Evento",
+      "setListLine": "Linha de Reportório"
     }
   }
 }

@@ -2,25 +2,25 @@
   "cpVenueManagerApp": {
     "song": {
       "home": {
-        "title": "Songs",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Criar novo(a) Song",
-        "createOrEditLabel": "Criar ou editar Song",
-        "notFound": "Nenhum Songs encontrado"
+        "title": "Músicas",
+        "refreshListLabel": "Actualizar",
+        "createLabel": "Criar nova Música",
+        "createOrEditLabel": "Criar ou editar Música",
+        "notFound": "Nenhuma Música encontrado"
       },
-      "created": "Um novo Song foi criado com o identificador {{ param }}",
-      "updated": "Song com identificador {{ param }} foi actualizado",
-      "deleted": "Song com identificador {{ param }} foi eliminado",
+      "created": "Uma nova Música foi criada com o identificador {{ param }}",
+      "updated": "Música com identificador {{ param }} foi actualizada",
+      "deleted": "Música com identificador {{ param }} foi eliminada",
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Song {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar a Música {{ id }}?"
       },
       "detail": {
-        "title": "Song"
+        "title": "Música"
       },
       "id": "ID",
-      "name": "Name",
-      "duration": "Duration",
-      "score": "Score"
+      "name": "Nome",
+      "duration": "Duração",
+      "score": "Partitura"
     }
   }
 }

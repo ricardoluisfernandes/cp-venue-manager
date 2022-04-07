@@ -2,28 +2,28 @@
   "cpVenueManagerApp": {
     "expense": {
       "home": {
-        "title": "Expenses",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Criar novo(a) Expense",
-        "createOrEditLabel": "Criar ou editar Expense",
-        "notFound": "Nenhum Expenses encontrado"
+        "title": "Despesas",
+        "refreshListLabel": "Actualizar",
+        "createLabel": "Criar nova Despesa",
+        "createOrEditLabel": "Criar ou editar Despesa",
+        "notFound": "Nenhuma Despesa encontrada"
       },
-      "created": "Um novo Expense foi criado com o identificador {{ param }}",
-      "updated": "Expense com identificador {{ param }} foi actualizado",
-      "deleted": "Expense com identificador {{ param }} foi eliminado",
+      "created": "Uma nova Despesa foi criada com o identificador {{ param }}",
+      "updated": "Despesa com identificador {{ param }} foi actualizada",
+      "deleted": "Despesa com identificador {{ param }} foi eliminada",
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Expense {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar a Despesa {{ id }}?"
       },
       "detail": {
-        "title": "Expense"
+        "title": "Despesa"
       },
       "id": "ID",
-      "type": "Type",
-      "value": "Value",
-      "status": "Status",
-      "payment": "Payment",
-      "member": "Member",
-      "venue": "Venue"
+      "type": "Tipo",
+      "value": "Valor",
+      "status": "Estado",
+      "payment": "Pagamento",
+      "member": "Elemento",
+      "venue": "Evento"
     }
   }
 }

@@ -2,8 +2,8 @@
   "cpVenueManagerApp": {
     "PaymentStatus": {
       "null": "",
-      "PENDING": "PENDING",
-      "EXECUTED": "EXECUTED"
+      "PENDING": "Pendente",
+      "EXECUTED": "Executado"
     }
   }
 }
